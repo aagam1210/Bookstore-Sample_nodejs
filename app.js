@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 const civicSip = require('civic-sip-api');
 const PRIVATE_KEY = "c6d9c62b87efb22c2acea601b213cf9255716042e0a05c9b10b9ef41d7c5a97b"
 const APP_SECRET = "ae44d7abe12309b01e611045b08a55f3"
-var jwtToken;
+var jwtToken = null;
 
 // Step 4: Initialize instance passing your appId and secret.
 const civicClient = civicSip.newClient({

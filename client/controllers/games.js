@@ -55,6 +55,12 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
 		});
 	}
 
+	$scope.getToken = function(){
+		$http.get('/api/games/').success(function(response){
+			console.log(response);
+		});
+	}
+
 	$scope.updateGame = function(){
 		var id = $routeParams.id;
 		$http.put('/api/games/'+id, $scope.game).success(function(response){
