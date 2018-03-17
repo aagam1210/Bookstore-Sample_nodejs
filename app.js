@@ -79,7 +79,7 @@ app.delete('/api/games/:_id', function(req, res){
 	});
 });
 
-app.post('/api/civic', function(req, res){
+app.get('/api/civic', function(req, res){
 	jwtToken = req.body;
 	console.log("api/civic");
 	console.log(req);
