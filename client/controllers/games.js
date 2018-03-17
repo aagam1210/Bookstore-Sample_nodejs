@@ -15,8 +15,8 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
 
 		// encoded JWT Token is sent to the server
 		var jwtToken = event.response;
-		http.post('/api/civic', jwtToken).success(function(response){
-					console.log(jwtToken);
+		$http.post('/api/civic', jwtToken).success(function(response){
+			console.log(jwtToken);
 		});
 	});
 
