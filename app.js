@@ -30,6 +30,7 @@ mongoose.connect('mongodb://pujan:Omg!tsgunn3r@ds023694.mlab.com:23694/bookstore
 var db = mongoose.connection;
 
 app.get('/api/games', function(req, res){
+	console.log("gmaes api");
 	Game.getGames(function(err, games){
 		if(err){
 			throw err;
@@ -78,7 +79,7 @@ app.delete('/api/games/:_id', function(req, res){
 	});
 });
 
-app.post('/api/civic'), function(req, res){
+app.post('/api/civic', function(req, res){
 	jwtToken = req.body;
 	// console.log(jwtToken);
 
@@ -90,11 +91,11 @@ app.post('/api/civic'), function(req, res){
     }).catch((error) => {
         console.log(error);
     });
-}
+});
 
-app.get('/api/sendToken'), function(req, res){
+app.get('/api/sendToken', function(req, res){
 	res.send(receivedUserData);
-}
+});
 
 app.listen(app.get('port'), function(){
 	console.log('Running on port ', app.get('port'));
