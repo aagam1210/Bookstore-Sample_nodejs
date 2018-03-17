@@ -12,7 +12,7 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
 
 	// Listen for data
 	civicSip.on('auth-code-received', function (event) {
-
+		console.log("auth-code-received");
 		// encoded JWT Token is sent to the server
 		var jwtToken = event.response;
 		$http.post('/api/civic', jwtToken).success(function(response){
@@ -56,6 +56,7 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
 	}
 
 	$scope.getToken = function(){
+		console.log("getting token");
 		$http.get('/api/sendToken/').success(function(response){
 			console.log(response);
 		});
