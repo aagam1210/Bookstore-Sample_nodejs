@@ -81,6 +81,9 @@ app.delete('/api/games/:_id', function(req, res){
 
 app.post('/api/civic', function(req, res){
 	jwtToken = req.body;
+	console.log("api/civic");
+	console.log(req);
+	console.log(req.body);
 	console.log(jwtToken);
 
 	// Step 5: Exchange authorization code for user data.
@@ -97,6 +100,7 @@ app.post('/api/civic', function(req, res){
 });
 
 app.get('/api/sendToken', function(req, res){
+	console.log("sendToken");
 	console.log(receivedUserData);
 	res.send(receivedUserData);
 });
