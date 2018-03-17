@@ -86,7 +86,7 @@ app.post('/api/civic'), function(req, res){
 	civicClient.exchangeCode(jwtToken)
     .then((userData) => {
         // store user data and userId as appropriate
-        receivedUserData = JSON.stringify(userData, null, 4));
+        receivedUserData = JSON.stringify(userData, null, 4);
     }).catch((error) => {
         console.log(error);
     });
