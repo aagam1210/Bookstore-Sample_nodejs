@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 const civicSip = require('civic-sip-api');
 const PRIVATE_KEY = "c6d9c62b87efb22c2acea601b213cf9255716042e0a05c9b10b9ef41d7c5a97b"
 const APP_SECRET = "ae44d7abe12309b01e611045b08a55f3"
+var jwtToken;
 
 // Step 4: Initialize instance passing your appId and secret.
 const civicClient = civicSip.newClient({
@@ -77,7 +78,7 @@ app.delete('/api/games/:_id', function(req, res){
 });
 
 app.post('/api/civic'), function(req, res){
-	var jwtToken = req.body;
+	jwtToken = req.body;
 	console.log(jwtToken);
 
 	// Step 5: Exchange authorization code for user data.
@@ -88,6 +89,10 @@ app.post('/api/civic'), function(req, res){
  //    }).catch((error) => {
  //        console.log(error);
  //    });
+}
+
+app.get('/api/getToken'), function(req, res){
+	res.send(jwtToken);
 }
 
 app.listen(app.get('port'), function(){
