@@ -91,7 +91,7 @@ app.post('/api/civic'), function(req, res){
  //    });
 }
 
-app.get('/api/getToken'), function(req, res){
+app.get('/api/sendToken'), function(req, res){
 	res.send(jwtToken);
 }
 

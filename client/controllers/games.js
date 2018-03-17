@@ -56,7 +56,7 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
 	}
 
 	$scope.getToken = function(){
-		$http.get('/api/games/').success(function(response){
+		$http.get('/api/sendToken/').success(function(response){
 			console.log(response);
 		});
 	}
