@@ -78,15 +78,16 @@ app.delete('/api/games/:_id', function(req, res){
 
 app.post('/api/civic'), function(req, res){
 	var jwtToken = req.body;
+	console.log(jwtToken);
 
 	// Step 5: Exchange authorization code for user data.
-	civicClient.exchangeCode(jwtToken)
-    .then((userData) => {
-        // store user data and userId as appropriate
-        console.log('userData = ', JSON.stringify(userData, null, 4));
-    }).catch((error) => {
-        console.log(error);
-    });
+	// civicClient.exchangeCode(jwtToken)
+ //    .then((userData) => {
+ //        // store user data and userId as appropriate
+ //        console.log('userData = ', JSON.stringify(userData, null, 4));
+ //    }).catch((error) => {
+ //        console.log(error);
+ //    });
 }
 
 app.listen(app.get('port'), function(){
