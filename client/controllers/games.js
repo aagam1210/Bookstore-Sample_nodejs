@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp');
 
 myApp.controller('GamesController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
-	console.log('GamesController loaded...');
+	console.log('Controller loaded...');
 
 	var civicSip = new civic.sip({ appId: 'HJcbwZcYG' });
 	var button = document.querySelector('#signupButton');

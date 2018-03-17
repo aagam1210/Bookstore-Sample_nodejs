@@ -1,4 +1,13 @@
 <a href="#/games">Go Back</a>
+<br><br>
+<div>
+  <button id="signupButton" class="civic-button-a medium" type="button">
+    <span>Log in with Civic</span>
+  </button>
+  <button id="getToken" type="button" ng-click="getToken()">
+    <span>Get Token</span>
+  </button>
+</div>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Add Game</h3>
@@ -10,14 +19,6 @@
         <div class="form-group">
           <label>Add a Game</label>
           <input type="text" class="form-control" ng-model="game.title" placeholder="Title">
-        </div>
-        <div>
-          <button id="signupButton" class="civic-button-a medium" type="button">
-            <span>Log in with Civic</span>
-          </button>
-          <button id="getToken" type="button" ng-click="getToken()">
-            <span>Get Token</span>
-          </button>
         </div>
         <div class="form-group">
           <label>Game Genre</label>

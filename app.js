@@ -30,7 +30,6 @@ mongoose.connect('mongodb://pujan:Omg!tsgunn3r@ds023694.mlab.com:23694/bookstore
 var db = mongoose.connection;
 
 app.get('/api/games', function(req, res){
-	console.log("gmaes api");
 	Game.getGames(function(err, games){
 		if(err){
 			throw err;
@@ -81,26 +80,17 @@ app.delete('/api/games/:_id', function(req, res){
 
 app.get('/api/civic/:_token', function(req, res){
 	jwtToken = req.params._token;
-	console.log("api/civic");
-	// console.log(req.body);
-	console.log(jwtToken);
 
 	// Step 5: Exchange authorization code for user data.
 	civicClient.exchangeCode(jwtToken)
     .then((userData) => {
-    	console.log("got user data");
-        // store user data and userId as appropriate
         receivedUserData = JSON.stringify(userData, null, 4);
-        console.log(receivedUserData);
     }).catch((error) => {
-    	console.log("exchangeCode failed");
         console.log(error);
     });
 });
 
 app.get('/api/sendToken', function(req, res){
-	console.log("sendToken");
-	console.log(receivedUserData);
 	res.send(receivedUserData);
 });
 
