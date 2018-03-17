@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp');
 
-myApp.controller('GamesController', ['$scope', '$http', '$https', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
+myApp.controller('GamesController', ['$scope', '$http', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
 	console.log('GamesController loaded...');
 
 	var civicSip = new civic.sip({ appId: 'HJcbwZcYG' });
@@ -16,7 +16,7 @@ myApp.controller('GamesController', ['$scope', '$http', '$https', '$location', '
 		// encoded JWT Token is sent to the server
 		var jwtToken = event.response;
 		console.log(jwtToken);
-		$https.post('/api/civic', jwtToken).success(function(response){
+		$http.post('/api/civic', jwtToken).success(function(response){
 			console.log("successful auth");
 		});
 	});
