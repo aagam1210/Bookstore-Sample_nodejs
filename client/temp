@@ -1,3 +1,12 @@
-button.addEventListener('click', function () {
-	civicSip.signup({ style: 'popup', scopeRequest:civicSip.ScopeRequests.PROOF_OF_IDENTITY });
+const civicClient = civicSip.newClient({
+  appId: 'AbCdEfGHi',
+  prvKey: PRIVATE_KEY,
+  appSecret: APP_SECRET,
 });
+// Exchange authorization code for user data.
+civicClient.exchangeCode(jwtToken)
+    .then((userData) => {
+        receivedUserData = JSON.stringify(userData, null, 4);
+    }).catch((error) => {
+        console.log(error);
+    });
