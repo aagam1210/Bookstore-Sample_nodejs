@@ -1,12 +1,17 @@
-const civicClient = civicSip.newClient({
-  appId: 'AbCdEfGHi',
-  prvKey: PRIVATE_KEY,
-  appSecret: APP_SECRET,
-});
-// Exchange authorization code for user data.
-civicClient.exchangeCode(jwtToken)
-    .then((userData) => {
-        receivedUserData = JSON.stringify(userData, null, 4);
-    }).catch((error) => {
-        console.log(error);
-    });
+userData =  {
+    "data": [
+        {
+            "label": "documents.genericId.name",
+            "value": "John Smith",
+            "isValid": true,
+            "isOwner": true
+        },
+        {
+            "label": "contact.personal.phoneNumber",
+            "value": "+1 5556187380",
+            "isValid": true,
+            "isOwner": true
+        }
+    ],
+    "userId": "c6d5795f8a059ez5ad29a33a60f8b402a172c3e0bbe50fd230ae8e0303609b42"
+}
